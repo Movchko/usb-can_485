@@ -1,0 +1,4 @@
+../USBX/App/usbx_persistent_overrides.c:43:16:_str_len	3
+../USBX/App/usbx_persistent_overrides.c:52:10:USBDP_Get_Device_Framework_Speed	2
+../USBX/App/usbx_persistent_overrides.c:61:10:USBDP_Get_String_Framework	2
+../USBX/App/usbx_persistent_overrides.c:105:10:USBDP_Get_Interface_Number	3

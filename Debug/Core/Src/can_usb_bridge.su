@@ -1,0 +1,13 @@
+../Core/Src/can_usb_bridge.c:59:15:Bridge_UsbTransmit	16	static
+../Core/Src/can_usb_bridge.c:66:17:q_next	16	static
+../Core/Src/can_usb_bridge.c:75:17:bsu_checksum	24	static
+../Core/Src/can_usb_bridge.c:84:13:rx_reset	4	static
+../Core/Src/can_usb_bridge.c:90:13:usb_to_can_push	32	static
+../Core/Src/can_usb_bridge.c:102:6:Bridge_CanRxPush	32	static
+../Core/Src/can_usb_bridge.c:115:6:Bridge_UsbRx	40	static
+../Core/Src/can_usb_bridge.c:200:13:send_can_to_usb	16	static
+../Core/Src/can_usb_bridge.c:236:13:poll_can_rx	72	static
+../Core/Src/can_usb_bridge.c:250:13:send_usb_to_can	56	static
+../Core/Src/can_usb_bridge.c:278:6:Bridge_Init	8	static
+../Core/Src/can_usb_bridge.c:286:6:Bridge_Process	8	static
+../Core/Src/can_usb_bridge.c:294:6:Bridge_UsbTxComplete	4	static

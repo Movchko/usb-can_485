@@ -1,0 +1,14 @@
+../USBX/App/ux_device_descriptors.c:145:10:USBD_Get_Device_Framework_Speed	24	static
+../USBX/App/ux_device_descriptors.c:184:10:USBD_Get_String_Framework	24	static
+../USBX/App/ux_device_descriptors.c:235:10:USBD_Get_Language_Id_Framework	24	static
+../USBX/App/ux_device_descriptors.c:256:10:USBD_Get_Interface_Number	24	static
+../USBX/App/ux_device_descriptors.c:288:10:USBD_Get_Configuration_Number	24	static
+../USBX/App/ux_device_descriptors.c:311:13:USBD_Desc_GetString	32	static
+../USBX/App/ux_device_descriptors.c:339:16:USBD_Desc_GetLen	24	static
+../USBX/App/ux_device_descriptors.c:362:17:USBD_Device_Framework_Builder	40	static
+../USBX/App/ux_device_descriptors.c:463:10:USBD_FrameWork_AddClass	16	static
+../USBX/App/ux_device_descriptors.c:497:10:USBD_FrameWork_AddToConfDesc	32	static
+../USBX/App/ux_device_descriptors.c:588:16:USBD_FrameWork_FindFreeIFNbr	32	static
+../USBX/App/ux_device_descriptors.c:614:14:USBD_FrameWork_AddConfDesc	24	static
+../USBX/App/ux_device_descriptors.c:639:14:USBD_FrameWork_AssignEp	32	static
+../USBX/App/ux_device_descriptors.c:668:13:USBD_FrameWork_CDCDesc	24	static

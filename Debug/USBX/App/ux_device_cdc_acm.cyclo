@@ -1,0 +1,11 @@
+../USBX/App/ux_device_cdc_acm.c:81:6:USBD_CDC_ACM_Activate	1
+../USBX/App/ux_device_cdc_acm.c:102:6:USBD_CDC_ACM_Deactivate	1
+../USBX/App/ux_device_cdc_acm.c:120:6:USBD_CDC_ACM_ParameterChange	1
+../USBX/App/ux_device_cdc_acm.c:130:9:UsbDevice_CdcReady	1
+../USBX/App/ux_device_cdc_acm.c:135:13:CdcReadCb	4
+../USBX/App/ux_device_cdc_acm.c:146:13:CdcWriteCb	1
+../USBX/App/ux_device_cdc_acm.c:156:5:USBD_CDC_ACM_Transmit	6
+../USBX/App/ux_device_cdc_acm.c:169:6:USBD_CDC_ACM_Process	7
+../USBX/App/ux_device_cdc_acm.c:184:8:Bridge_UsbTransmit	1
+../USBX/App/ux_device_cdc_acm.c:189:13:CdcStartTransmission	2
+../USBX/App/ux_device_cdc_acm.c:200:32:CdcFindInstanceFromClassArray	7
