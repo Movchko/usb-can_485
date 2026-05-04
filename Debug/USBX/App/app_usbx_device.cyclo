@@ -1,7 +1,0 @@
-../USBX/App/app_usbx_device.c:82:6:MX_USBX_Device_Init	6
-../USBX/App/app_usbx_device.c:192:12:_ux_utility_interrupt_disable	1
-../USBX/App/app_usbx_device.c:209:6:_ux_utility_interrupt_restore	1
-../USBX/App/app_usbx_device.c:223:7:_ux_utility_time_get	1
-../USBX/App/app_usbx_device.c:241:13:USBD_ChangeFunction	5
-../USBX/App/app_usbx_device.c:324:9:UsbDevice_IsConfigured	8
-../USBX/App/app_usbx_device.c:355:6:MX_USBX_Device_Process	2

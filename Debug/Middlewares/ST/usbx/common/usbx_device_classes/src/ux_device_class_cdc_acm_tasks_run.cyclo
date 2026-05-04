@@ -1,3 +1,0 @@
-../Middlewares/ST/usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_tasks_run.c:96:6:_ux_device_class_cdc_acm_tasks_run	3
-../Middlewares/ST/usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_tasks_run.c:140:20:_ux_device_class_cdc_acm_transmission_read_run	6
-../Middlewares/ST/usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_tasks_run.c:268:20:_ux_device_class_cdc_acm_transmission_write_run	17
