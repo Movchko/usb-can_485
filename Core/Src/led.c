@@ -105,8 +105,7 @@ static void ws2812_recalc_timings(void)
 
 static void ws2812_send_grb(uint8_t g, uint8_t r, uint8_t b)
 {
-  uint32_t primask = __get_PRIMASK();
-  __disable_irq();
+  /* Не использовать __disable_irq(): блокирует USB IRQ → приём OUT с ПК зависает. */
 
   for (uint32_t n = 0u; n < 3u; n++) {
     uint8_t byte = (n == 0u) ? g : ((n == 1u) ? r : b);
@@ -127,10 +126,6 @@ static void ws2812_send_grb(uint8_t g, uint8_t r, uint8_t b)
 
   LED_GPIO_Port->BSRR = (uint32_t)LED_Pin << 16U;
   ws2812_delay_cycles(s_reset_cy);
-
-  if (primask == 0u) {
-    __enable_irq();
-  }
 }
 
 static void output_if_changed(uint8_t r, uint8_t g, uint8_t b)
@@ -155,9 +150,8 @@ static uint8_t led_usb_configured_poll(void)
 
 void Led_Init(void)
 {
-	return;
-	ws2812_dwt_enable();
-	ws2812_recalc_timings();
+  ws2812_dwt_enable();
+  ws2812_recalc_timings();
 
   s_last_can_tx_tick = 0u;
   s_phase_start_tick = HAL_GetTick();
@@ -167,7 +161,7 @@ void Led_Init(void)
   s_was_can_active = 0u;
   s_prev_usb_configured = 0u;
   s_usb_cdc_active = 0u;
-  output_if_changed(0, 0u, 0u);
+  output_if_changed(LED_BRIGHT_R, 0u, 0u);
 }
 
 void Led_SetUsbConfigured(uint8_t configured)
@@ -185,8 +179,7 @@ void Led_NotifyCanTx(void)
 __attribute__((optimize("O0")))
 void Led_Process(void)
 {
-  return;
-	uint32_t now = HAL_GetTick();
+  uint32_t now = HAL_GetTick();
   uint8_t usb_cfg = led_usb_configured_poll();
 
   if (usb_cfg && !s_prev_usb_configured) {

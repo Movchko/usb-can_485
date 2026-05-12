@@ -409,25 +409,24 @@ static void MX_USB_PCD_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USB_Init 2 */
-  /* Configure PMA buffers for USB_DRD_FS endpoints.
-   * Without explicit PMA mapping EP0 setup packets can be corrupted. */
-  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x00U, PCD_SNG_BUF, 0x18U) != HAL_OK)
+  /* PMA: как в примерах ST для USBX CDC на H5 — по 64 байта на bulk IN/OUT без перекрытия. */
+  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x00U, PCD_SNG_BUF, 0x20U) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x80U, PCD_SNG_BUF, 0x58U) != HAL_OK)
+  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x80U, PCD_SNG_BUF, 0x60U) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x81U, PCD_SNG_BUF, 0x98U) != HAL_OK)
+  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x81U, PCD_SNG_BUF, 0xA0U) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x03U, PCD_SNG_BUF, 0xD8U) != HAL_OK)
+  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x82U, PCD_SNG_BUF, 0xE0U) != HAL_OK)
   {
     Error_Handler();
   }
-  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x82U, PCD_SNG_BUF, 0x118U) != HAL_OK)
+  if (HAL_PCDEx_PMAConfig(&hpcd_USB_DRD_FS, 0x03U, PCD_SNG_BUF, 0x120U) != HAL_OK)
   {
     Error_Handler();
   }
