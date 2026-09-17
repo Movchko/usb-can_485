@@ -346,7 +346,7 @@ static void MX_UART4_Init(void)
 
   /* USER CODE END UART4_Init 1 */
   huart4.Instance = UART4;
-  huart4.Init.BaudRate = 115200;
+  huart4.Init.BaudRate = 460800;
   huart4.Init.WordLength = UART_WORDLENGTH_8B;
   huart4.Init.StopBits = UART_STOPBITS_1;
   huart4.Init.Parity = UART_PARITY_NONE;
@@ -490,6 +490,27 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     uint32_t id = (rxh.IdType == FDCAN_EXTENDED_ID) ? (rxh.Identifier & 0x1FFFFFFFu)
                                                      : (rxh.Identifier & 0x7FFu);
     Bridge_CanRxPush(bus, id, data);
+  }
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+  if (huart->Instance == UART4) {
+    Bridge_UartRxEvent(Size);
+  }
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == UART4) {
+    Bridge_UartTxCplt();
+  }
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == UART4) {
+    Bridge_UartError();
   }
 }
 

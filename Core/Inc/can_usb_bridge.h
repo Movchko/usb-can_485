@@ -7,8 +7,11 @@
 extern "C" {
 #endif
 
-#define BSU_PKT_TYPE_CAN   0u
-#define BSU_PKT_TYPE_CAN2  1u
+#define BSU_PKT_TYPE_CAN       0u
+#define BSU_PKT_TYPE_CAN2      1u
+#define BSU_PKT_TYPE_ESP_UART  5u
+
+#define ESP_UART_BODY_MAX      246u
 
 void Bridge_Init(void);
 void Bridge_Process(void);
@@ -22,6 +25,11 @@ void Bridge_UsbTxComplete(void);
 /* Вызывать из HAL_FDCAN_RxFifo0Callback.
  * can_bus: 1 = CAN1, 2 = CAN2 */
 void Bridge_CanRxPush(uint8_t can_bus, uint32_t can_id, const uint8_t *data);
+
+/* UART4 RS485 callbacks (из HAL). */
+void Bridge_UartRxEvent(uint16_t size);
+void Bridge_UartTxCplt(void);
+void Bridge_UartError(void);
 
 #ifdef __cplusplus
 }
